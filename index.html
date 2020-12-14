@@ -1,0 +1,59 @@
+<html lang="fr">
+    <head>
+        <link rel="stylesheet" href="css/style.css"/>
+        <!--import jQueries-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+        <!-- Titre-->
+        <title>PONG</title>
+
+    </head>
+
+
+    <body>
+    <div id="ecran-debut" class="ecran-debut">
+        <div id="textestart">
+            Joueur 1 <br><br>
+            utilisez les touches <br><br>
+            <span class="touche">A</span>
+            et
+            <span class="touche">Q</span>
+        </div>
+        <div>
+            Joueur 2 <br><br>
+            utilisez les touches <br><br>
+            <span class="touche">P</span>
+            et
+            <span class="touche">M</span>
+        </div>
+        <a id ="btn-jouer" href="#" class="btn btn-go">JOUER</a>
+    </div>
+
+    <!-- affichage terrain-->
+    <div id="terrain">
+        <!-- affichage balle dans terrain-->
+        <div id="balle"></div>
+
+        <!-- score -->
+        <!-- droite -->
+        <div id="scored" class="score">0</div>
+        <!-- gauche -->
+        <div id="scoreg" class="score">0</div>
+
+        <!-- affichage la raquette dans terrain-->
+        <!-- gauche -->
+        <div id="gauche" class="raquette"></div>
+        <!-- droite -->
+        <div id="droite" class="raquette"></div>
+    </div>
+
+
+    </body>
+
+    <!-- Les classes -->
+    <script src="js/Joueur.js"></script>
+    <script src="js/Balle.js"></script>
+    <script src="js/Terrain.js"></script>
+    <script src="js/Raquette.js"></script>
+    <script src="js/main.js"></script>
+</html>

@@ -1,0 +1,179 @@
+body
+{
+    /** couleurs & font **/
+    background-color: #ffffff;
+    color: #fff;
+    font-family: monospace;
+
+    /** centering **/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#terrain
+{
+    /** bordure blanche visible **/
+    position: relative;
+    border-top : 1px solid #e199ff;
+    border-bottom : 1px solid #e199ff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+
+    /** dimension terrain**/
+    width: 800px;
+    height: 400px;
+
+}
+
+
+.tiltHaut
+{
+    border-top-color:  rgb(0, 255, 0) !important;
+
+}
+
+.tiltBas
+{
+    border-bottom-color:  rgb(0, 255, 0) !important;
+
+}
+
+.tiltEchecG
+{
+    border-left-color: rgb(150, 0, 0) !important;
+}
+
+.tiltEchecD
+{
+    border-right-color: rgb(150, 0, 0) !important;
+}
+
+#balle
+{
+    position: absolute;
+
+    /** la balle est au centre**/
+    top: 50%;
+    left: 50%;
+
+    /** Design de la balle **/
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(225, 153, 255);
+}
+
+.raquette
+{
+    position: absolute;
+
+    --hauteur : 25%;
+
+    top : calc( 50% - var(--hauteur)/2 ); /** milieu de page */
+
+    /** design**/
+    width: 10px;
+    height : var(--hauteur);
+    background-color: rgb(225, 153, 255);
+
+}
+
+.tiltRaquette
+{
+    background-color: rgb(0, 44, 179) !important;
+}
+
+.score{
+    /**CSS Score**/
+    top : 0;
+    display: flex;
+    width: 50%;
+    height : 100%;
+    align-items: center;
+    justify-content: center;
+
+    font-size:40px;
+    font-family: 'Space Mono', cursive;
+}
+
+#scoreg{
+    /**Precision pour le score d'id gauche**/
+    float : left;
+    color: #9500ff;
+}
+
+#textestart{
+    /**Precision pour**/
+    color: #e199ff;
+}
+
+/** raquettes gauche et droite**/
+
+#gauche
+{
+    left: 1%;
+}
+
+#droite
+{
+    right: 1%;
+}
+
+/** Style de texte */
+h1{
+    font-size: 30px;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+/** style écran de début */
+.ecran-debut{
+    transition: all 3s;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+}
+.ecran-debut>*{
+    margin: 10px;
+}
+.ecran-debut .touche{
+    display: inline-flex;
+    transform: rotate(0deg) !important;
+}
+
+/* disparition de l'écran de début */
+#ecran-debut{
+    will-change: opacity, filter;
+    opacity: 1;
+}
+
+#ecran-debut.invisible{
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Bouton du début */
+.btn{
+    color: #ffffff;
+    background-color: #e199ff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
