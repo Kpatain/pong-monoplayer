@@ -125,7 +125,11 @@ class Raquette
         );
     }
 
-
+    
+    //J'ai une blague sur les magasins
+    //Mais elle a pas supermarché
+    
+    
     //update
     majHTML()
     {
