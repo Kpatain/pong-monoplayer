@@ -27,13 +27,9 @@ let raquetteG = new Raquette($("#gauche"));
  *
  * @type {Joueur}
  */
-let joueur0 = new Joueur($("#scoreg"));
+let joueur = new Joueur($("#score"));
 
-/**
- *
- * @type {Joueur}
- */
-let joueur1 = new Joueur($("#scored"));
+let vies = new Vies($("#vie"));
 
 /**
  *

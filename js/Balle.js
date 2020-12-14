@@ -121,10 +121,8 @@ class Balle
         //Droite
         if(this.droite > terrain.largeur)
         {
-            joueur0.ajoutScore();
             this.buf = 0.75;
             this.recentrer();
-            terrain.tiltEchecD();
         }
         
         //Bas
@@ -143,8 +141,6 @@ class Balle
         //Gauche
         if (this.gauche <= 0)
         {
-            joueur1.ajoutScore();
-            terrain.tiltEchecG();
             this.buf = 0.25;
             this.recentrer();
         }
@@ -160,9 +156,9 @@ class Balle
             if (this.bas > raquetteD.haut) {        //et si la balle est plus basse que le haut de la raquette
                 if (this.haut < raquetteD.bas) {    //et si la balle est plus haute que le bas de la raquette
                     raquetteD.tiltRaquette();       //tilt css de la raquette droite
-                    //this.angle = Math.PI - this.angle;
                     this.ratioRebond(true);
-                    this.acceleration();            //la balle accelere a chaque raquette
+                    joueur.ajoutScore();
+
                 }
             }
         }
@@ -173,8 +169,6 @@ class Balle
                 if (this.haut < raquetteG.bas) {    // et si la balle est plus haute que le bas de la raquette
                     raquetteG.tiltRaquette();       //tilt css de la raquette gauche
                     this.ratioRebond(false);
-                    //this.angle = Math.PI - this.angle;
-                    this.acceleration();             //la balle accelere a chaque raquette
                 }
             }
         }
@@ -185,6 +179,7 @@ class Balle
         this.haut = terrain.hauteur/2;    //au milieu
         this.gauche = terrain.largeur/2;
 
+        Vies.
         this.vitesse = this.vitesseD;
         this.angle = this.defAngle();
 
@@ -208,6 +203,11 @@ class Balle
             this.vitesse *= raquetteD.ratio() + 1
             console.log(this.vitesse);
             this.angle = -3*Math.PI/4 - raquetteD.ratio() * Math.PI/2;
+
+            if (Math.abs(this.vitesse) < this.vitesseMax)
+            {
+                this.vitesse *= 1.1;
+            }
         }
 
         else
@@ -215,6 +215,11 @@ class Balle
             this.vitesse = 2*Math.abs(raquetteG.ratio() - 0.5) + 1;
             console.log(this.vitesse);
             this.angle = -Math.PI/4 + raquetteG.ratio() * Math.PI/2;
+
+            if (Math.abs(this.vitesse) < this.vitesseMax)
+            {
+                this.vitesse *= 1.1;
+            }
 
         }
 

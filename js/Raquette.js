@@ -70,7 +70,6 @@ class Raquette
         //Mouvement raquette
         this.haut += this.vitesseY * this.direction;
         this.limite();
-        console.log("b");
         this.majHTML();
     }
 

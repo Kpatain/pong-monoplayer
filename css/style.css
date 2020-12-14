@@ -42,15 +42,6 @@ body
 
 }
 
-.tiltEchecG
-{
-    border-left-color: rgb(150, 0, 0) !important;
-}
-
-.tiltEchecD
-{
-    border-right-color: rgb(150, 0, 0) !important;
-}
 
 #balle
 {
@@ -93,18 +84,12 @@ body
     display: flex;
     width: 50%;
     height : 100%;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    color: #e199ff;
 
-    font-size:40px;
-    font-family: 'Space Mono', cursive;
+    font-size:20px;
 }
 
-#scoreg{
-    /**Precision pour le score d'id gauche**/
-    float : left;
-    color: #9500ff;
-}
 
 #textestart{
     /**Precision pour**/
@@ -167,6 +152,30 @@ h1{
     pointer-events: none;
     opacity: 0;
 }
+
+
+/*Marche peu*/
+
+/*
+.ecran-fin>*{
+    margin: 10px;
+}
+.ecran-fin .touche{
+    display: inline-flex;
+    transform: rotate(0deg) !important;
+}
+/
+
+#ecran-fin{
+    will-change: opacity, filter;
+    opacity: 1;
+}
+
+#ecran-fin.invisible{
+    pointer-events: none;
+    opacity: 0;
+}
+*/
 
 /* Bouton du début */
 .btn{

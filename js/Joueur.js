@@ -11,7 +11,7 @@ class Joueur{
      * ajout du score
      */
     ajoutScore(){
-        this.score += 1;
+        this.score += 10;
         this.$element.text(this.score);
     }
 }
