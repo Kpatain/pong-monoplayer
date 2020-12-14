@@ -61,24 +61,16 @@ $("#btn-jouer").on("mouseup", function (event) {
 //APPUIE
 window.addEventListener("keydown", function (event) {
     if (event.defaultPrevented) {return}
-    if (event.key === "a" || event.key === "A")
+    if (event.key === "ArrowUp")
     {
         raquetteG.monter();
+        raquetteD.descendre();
     }
 
-    else if (event.key === "q" || event.key === "Q")
+    else if (event.key === "ArrowDown")
     {
         raquetteG.descendre();
-    }
-
-    else if (event.key === "p" || event.key === "P")
-    {
         raquetteD.monter();
-    }
-
-    else if (event.key === "m" || event.key === "M")
-    {
-        raquetteD.descendre();
     }
 
     event.preventDefault();
@@ -88,26 +80,18 @@ window.addEventListener("keydown", function (event) {
 window.addEventListener("keyup", function (event)
 {
     if (event.defaultPrevented) {return}
-    if (event.key === "a"
-        || event.key === "A"
-        || event.key === "q"
-        || event.key === "Q")
+    if (event.key === "ArrowUp")
     {
         raquetteG.arret();
-    }
-
-    else if (event.key === "q" || event.key === "Q")
-    {
-        raquetteG.arret();
-    }
-
-    if (event.key === "p"
-        || event.key === "P"
-        || event.key === "m"
-        || event.key === "M")
-    {
         raquetteD.arret();
     }
+
+    else if (event.key === "ArrowDown")
+    {
+        raquetteD.arret();
+        raquetteG.arret();
+    }
+
 
     event.preventDefault();
 }, true);
